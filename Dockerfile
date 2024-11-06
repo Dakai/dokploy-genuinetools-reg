@@ -5,7 +5,7 @@ FROM golang:latest
 WORKDIR /app
 
 # Install reg
-RUN go get github.com/genuinetools/reg
+RUN go install github.com/genuinetools/reg@latest
 
 # Create a script to run reg with environment variables
 RUN echo '#!/bin/sh' > run_reg.sh && \
