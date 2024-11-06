@@ -1,10 +1,10 @@
 # Use an official Go runtime as a parent image
 FROM golang:latest
 
-ARG USERNAME
-ARG PASSWORD
-ARG REGISTRY_URL
-ARG PORT_NUMBER
+ENV USERNAME
+ENV PASSWORD
+ENV REGISTRY_URL
+ENV PORT_NUMBER
 
 # Set the working directory in the container
 WORKDIR /app
@@ -15,6 +15,8 @@ RUN git clone https://github.com/genuinetools/reg .
 
 # Install reg
 RUN go install .
+
+EXPOSE ${PORT_NUMBER}}
 
 CMD ["reg","server","-u","${USERNAME}","-p","${PASSWORD}","-r","${REGISTRY_URL}","--port","${PORT_NUMBER}"]
 
