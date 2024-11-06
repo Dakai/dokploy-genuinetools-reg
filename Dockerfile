@@ -16,7 +16,7 @@ RUN git clone https://github.com/genuinetools/reg .
 # Install reg
 RUN go install .
 
-EXPOSE ${PORT_NUMBER}}
+EXPOSE ${PORT_NUMBER}
 
 #CMD ["reg","server","-u","${USERNAME}","-p","${PASSWORD}","-r","${REGISTRY_URL}","--port","${PORT_NUMBER}"]
 
