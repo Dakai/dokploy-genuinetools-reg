@@ -16,11 +16,13 @@ RUN git clone https://github.com/genuinetools/reg .
 # Install reg
 RUN go install .
 
+CMD ["reg","server","-u","${USERNAME}","-p","${PASSWORD}","-r","${REGISTRY_URL}","--port","${PORT_NUMBER}"]
+
 # Create a script to run reg with environment variables
-RUN echo '#!/bin/sh' > run_reg.sh && \
-    echo "reg server -u ${USERNAME} -p ${PASSWORD} -r ${REGISTRY_URL} --port ${PORT_NUMBER}" >> run_reg.sh && \
-    chmod +x run_reg.sh
+#RUN echo '#!/bin/sh' > run_reg.sh && \
+#    echo "reg server -u ${USERNAME} -p ${PASSWORD} -r ${REGISTRY_URL} --port ${PORT_NUMBER}" >> run_reg.sh && \
+#    chmod +x run_reg.sh
 
 #EXPOSE ${PORT_NUMBER}}
 # Set the entrypoint to the script
-ENTRYPOINT ["./run_reg.sh"]
+#ENTRYPOINT ["./run_reg.sh"]
