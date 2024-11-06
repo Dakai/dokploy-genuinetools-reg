@@ -21,6 +21,6 @@ RUN echo '#!/bin/sh' > run_reg.sh && \
     echo "reg server -u ${USERNAME} -p ${PASSWORD} -r ${REGISTRY_URL} --port ${PORT_NUMBER}" >> run_reg.sh && \
     chmod +x run_reg.sh
 
-EXPOSE ${PORT_NUMBER}}
+#EXPOSE ${PORT_NUMBER}}
 # Set the entrypoint to the script
 ENTRYPOINT ["./run_reg.sh"]
